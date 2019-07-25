@@ -1,0 +1,91 @@
+git for windows を導入（win初期プロンプトは独自。Macは初期でok）
+
+unixコマンド
+pwd 現在の場所表示フルパス(print working directory)
+ls その場所にあるフォルダやファイルを表示(list)
+cd 移動(change directory)
+mkdir フォルダ作成(make directroy)
+rm ファイル削除(remove)
+rm -r フォルダ強制削除
+touch ファイル作成
+tabで候補があれば出てくる
+javac Main.java→コンパイル
+java Main→javaの実行
+sp→横分割　vs→縦分割
+shift+>>で右インデント
+
+gitコマンド
+git initで開始
+git checkout (-b) (ブランチ名）でブランチ移動
+git add とgit commitで追加・作成
+git status git graphで状態確認
+git merge (ブランチ名)で統合
+
+vim
+dd 行削除（3ddで3行削除）
+yy 行コピー（ヤンク）
+p で下に貼り付けshift+pで上に貼り付け
+u で戻る（undo) Uで行全体戻す
+ctrl+r (redo)undoしすぎたものを進む
+o open下に一行追加し挿入から開始(shift+oで上に挿入）
+cw change word
+dib delete inner b 小かっこ内削除　Bにすると中カッコ内削除
+基本はint,double,boolean,String
+final付与で定数化→大文字にするのが通例、\でエスケープシーケンス
+vim 検索語のハイライト:set hlsearch　消すのは:noh
+数値インクリメントctrl+a　デクリメントctrl+x
+
+Java
+x++、x--で1増やす、減らす。Sop(x--)などでもxを表示後、x自体の-1を実行する。
+int整数、double少数、boolean真偽、String文字列
+(int）でキャスト（強制的に型変換する）数値型をStringではキャストできない。
+123+""などで文字列化する、String S=String.valueOf(i);
+Integer.parseInt()　string等の文字列型を数値型に変換
+new java.util.Random().nextInt(100);→0~99の100個。100は出ない。nextInt(100)+1なら1-100
+  1 import java.util.*;
+  2 public class Main2{
+  3     public static void main(String[] args){
+  4         Random rand=new Random();
+  5         int r =rand.nextInt(90);
+  6         int r2 =rand.nextInt(90); の方が一般的
+new java.util.Scanner(System.in),nextLine();で文字列、next()で単語、nextInt()で数値型
+sc.next();の処理によってユーザーの入力待ち状態になる。nextLine()は改行コードも読むので空読みが必要な場合も。
+ import java.util.*;
+  2 public class Main3{
+  3     public static void main(String[] args){
+  4         Scanner sc = new Scanner(System.in);
+  5         System.out.println("あなたの名前を入力してください");
+  6         String name = sc.nextLine();　のほうが一般的
+System.out.printf(“BIM%.2fです。”,bmi);()中のエスケープには%を使用。%%で"%"を表示可。
+偶数の判定if(age % S2 == 0)
+if構文　上から順に条件式を当て、該当したら処理終了する。
+そのため、if num<40,else if num<60,else if num<80,なので処理可能。
+文字列の比較はif(ans.equals(" "))　かつ&& または|| ～でないならば!←で反転
+変数が初期化されていないとエラーが出る。""で定義づけたりelseまで作ったりで回避。
+if構文において一致(==)を比較する場合、swich case "":~;break;も可能。default:でcase以外。
+if{}else{}文は?(三項演算子）で代用できる!! int min = a<b ? x:y;→a<bならx、違うならyを処理。
+while(a){}でaの間{}の処理を繰り返す。breakも可。do{} while;　
+「break」はループを抜ける！のでif文中にあってもforやwhileを終了する！！
+カウンター変数にはiがよくつかわれる。
+for (①int i =0 ;② i<10 ;③ i++){④}10回繰り返す。①→②true→④→③→②true→④→③→②…と進む。
+iは{}内がスコープ。int i=0じゃないと理由があるのかと疑う。1から出力などならi=1でOK!
+continue（その週だけ処理を抜ける処理）はループ処理だけ。
+配列：int n={,,};
+最大…for内でmaxを更新、最小…for内でminを更新、平均….lengthで個数割、検索for~ifであればbreak
+配列の内容逆転…端と端からtempを用いて入れ替える。
+  3         int[]a=new int[]{1,2,3};//aが住所3333メモリを作成し1,2,3を保持
+  4             a=null;//aがどこの住所も指定しなくなる
+  5             a[0]=10;//aがnull値を参照するので、参照先エラーになる→住所3333はゴミ箱へ
+  6     }               //nullが使えるのは参照型だけ！！
+int[][]data={{2,3,5},{1,2,4,5}}→data.length=2、data[0].length=3、(ジャグ配列もある）
+String str="Hello";char c=str.charAt(0);//Hがchar型として取り出せる
+String str=String.valueOf('h')
+Stringからchar配列を作る方法String str = "apple";char[] c = str.toCharArray();
+char配列からStringchar[] arr={'H','e','l','l','o'};String str=new String(arr);
+substring(0,10)→0~9番目の文字列まで取り出す(0,str.length-1)で最後以外取り出す
+str.toUpperCase()小文字→大文字　str.toLowerCase()大文字→小文字
+Math.abs(-2)→2（絶対値）
+Thread.sleep.(3000)→3秒停止
+static無→インスタンスメソッド。インスタンスで使用する。h3.sleep();
+static有→クラスメソッド。インスタンス不要。Integer.ParseIntなど。
+コンストラクタがない場合はApple(){}が暗黙で自動生成される。他のコンストラクタがある場合にはエラーに。
