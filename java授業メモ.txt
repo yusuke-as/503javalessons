@@ -90,3 +90,4 @@ static無→インスタンスメソッド。インスタンスで使用する。h3.sleep();
 static有→クラスメソッド。インスタンス不要。Integer.ParseIntなど。
 staticメソッド内でインスタンスを必要とする記述はできない。×static...{ this.name...}←thisはインスタンスが必要
 コンストラクタがない場合はApple(){}が暗黙で自動生成される。他のコンストラクタがある場合にはエラーに。
+List<String> names = new ArrayList<>();or LinkedList<>();　メモリ上で並べるか、前後のリンク先保持か使い分け
