@@ -33,6 +33,7 @@ public class AnimalApp{
 					if(animals.get(i) instanceof Cat){
 						Cat c=(Cat)animals.get(i);
 						c.sleep();
+						//((Cat)c).sleep;
 					}
 				}
 				break;

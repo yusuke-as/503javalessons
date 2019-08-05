@@ -79,7 +79,7 @@ continue（その週だけ処理を抜ける処理）はループ処理だけ。
   6     }               //nullが使えるのは参照型だけ！！
 int[][]data={{2,3,5},{1,2,4,5}}→data.length=2、data[0].length=3、(ジャグ配列もある）
 String str="Hello";char c=str.charAt(0);//Hがchar型として取り出せる
-String str=String.valueOf('h')
+String str=String.valueOf('h')hをstring型に変更
 Stringからchar配列を作る方法String str = "apple";char[] c = str.toCharArray();
 char配列からStringchar[] arr={'H','e','l','l','o'};String str=new String(arr);
 substring(0,10)→0~9番目の文字列まで取り出す(0,str.length-1)で最後以外取り出す
@@ -91,3 +91,4 @@ static有→クラスメソッド。インスタンス不要。Integer.ParseIntなど。
 staticメソッド内でインスタンスを必要とする記述はできない。×static...{ this.name...}←thisはインスタンスが必要
 コンストラクタがない場合はApple(){}が暗黙で自動生成される。他のコンストラクタがある場合にはエラーに。
 List<String> names = new ArrayList<>();or LinkedList<>();　メモリ上で並べるか、前後のリンク先保持か使い分け
+a instanceof B →aがBのインスタンスならtrueを返す
